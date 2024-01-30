@@ -1,0 +1,45 @@
+{
+  "name": "portfolio",
+  "homepage": "https://hamishw.com",
+  "description": "Portfolio site for Hamish Williams",
+  "repository": "https://github.com/HamishMW/portfolio.git",
+  "author": "Hamish Williams",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev --manual -c \"npm run start\"",
+    "start": "wrangler pages dev --compatibility-date=2023-06-21 ./public",
+    "postinstall": "node ./scripts/draco.cjs",
+    "deploy": "npm run build && wrangler pages deploy ./public"
+  },
+  "dependencies": {
+    "@remix-run/cloudflare": "^2.5.1",
+    "@remix-run/cloudflare-pages": "^2.5.1",
+    "@remix-run/css-bundle": "^2.5.1",
+    "@remix-run/react": "^2.5.1",
+    "aws4fetch": "^1.0.17",
+    "framer-motion": "11.0.3",
+    "isbot": "^4.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.160.1",
+    "three-stdlib": "^2.29.4"
+  },
+  "devDependencies": {
+    "@csstools/postcss-global-data": "^2.1.1",
+    "@remix-run/dev": "^2.5.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.33",
+    "postcss-custom-media": "^10.0.2",
+    "wrangler": "3.25.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
